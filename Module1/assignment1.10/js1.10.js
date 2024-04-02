@@ -1,14 +1,26 @@
-var num1 = parseInt(prompt("Enter the first integer:"));
-var num2 = parseInt(prompt("Enter the second integer:"));
-var num3 = parseInt(prompt("Enter the third integer:"));
+ function calculateProbability() {
+            var numDice = parseInt(document.getElementById("numDice").value);
+            var sum = parseInt(document.getElementById("sum").value);
 
- var total = num1 + num2 + num3;
- var product = num1 * num2 * num3;
- var average = total / 3;
+            var favorableOutcomes = 0;
+            var totalOutcomes = 10000; // Total number of simulations
 
- var resultsHTML = "<p>Sum: " + total + "</p>" +
-                  "<p>Product: " + product + "</p>" +
-                  "<p>average of the numbers: " + average.toFixed(2) + "</p>";  // 2 digits
+            for (var i = 0; i < totalOutcomes; i++) {
+                var rollSum = 0;
+                for (var j = 0; j < numDice; j++) {
+                    // Roll each die and sum the results
+                    rollSum += Math.floor(Math.random() * 6) + 1;
+                }
+                // Check if the sum matches the desired sum
+                if (rollSum === sum) {
+                    favorableOutcomes++;
+                }
+            }
 
-document.getElementById("results").innerHTML = resultsHTML;
+            // Calculate probability
+            var probability = (favorableOutcomes / totalOutcomes) * 100;
 
+            // Display result
+            var resultElement = document.getElementById("result");
+            resultElement.innerHTML = "Probability to get sum " + sum + " with " + numDice + " dice is " + probability.toFixed(2) + "%";
+        }
