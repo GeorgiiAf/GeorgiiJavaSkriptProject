@@ -13,7 +13,7 @@ function main() {
     let rolls = [];
     let result;
 
-    // Roll the dice until the result is 6
+    // Roll the dice until the result is ...
     do {
         result = rollDice(sides);
         rolls.push(result);
