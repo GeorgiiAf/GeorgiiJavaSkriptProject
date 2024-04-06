@@ -1,13 +1,19 @@
 function printLeapYears() {
-            var startYear = parseInt(document.getElementById("startYear").value);
-            var endYear = parseInt(document.getElementById("endYear").value);
-            var leapYearsList = document.getElementById("leapYearsList");
+            let startYear = parseInt(document.getElementById("startYear").value);
+            let endYear = parseInt(document.getElementById("endYear").value);
+
+           // Get the HTML element representing the list of leap years
+
+            let leapYearsList = document.getElementById("leapYearsList");
             leapYearsList.innerHTML = ""; // Clear previous results
 
- for (var year = startYear; year <= endYear; year++) {
+ for (let year = startYear; year <= endYear; year++) {
                 if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-                    var listItem = document.createElement("li");
-                    listItem.textContent = year;
+             // If the year is a leap year, create a new list item element
+                  let listItem = document.createElement("li");
+            // Set the text content of the list item to the current year
+                    listItem.textContent = String(year);
+                          // Append the list item to the leap years list
                     leapYearsList.appendChild(listItem);
                 }
             }

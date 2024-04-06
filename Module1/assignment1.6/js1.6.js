@@ -1,15 +1,15 @@
 function calculateSquareRoot() {
     // Display confirmation window
-    var confirmation = confirm("Should I calculate the square root?");
+    let confirmation = confirm("Should I calculate the square root?");
     
     if (confirmation) {
         // Ask for the number
-        var number = parseFloat(prompt("Enter a number:"));
-        
+        let number = parseFloat(prompt("Enter a number:"));
+    //  Checking if the value is a number
         if (!isNaN(number)) {
             if (number >= 0) {
                 // Calculate and print square root
-                var squareRoot = Math.sqrt(number);
+                let squareRoot = Math.sqrt(number);
                 document.getElementById("result").innerHTML = "The square root of " + number + " is " + squareRoot.toFixed(2);
             } else {
                 // Print message for negative number

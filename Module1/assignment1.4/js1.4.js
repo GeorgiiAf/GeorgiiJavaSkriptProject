@@ -1,12 +1,12 @@
 function sortStudent() {    // sort student function
 
-        // get student's name from field in the website
+// Get student's name from the input field in the website
 
-    var name = document.getElementById("studentName").value;
-    var houseNumber = Math.floor(Math.random() * 4) + 1;
-    var house;
+    let name = document.getElementById("studentName").value;
+    // Generate a random house number
+    let houseNumber = Math.floor(Math.random() * 4) + 1;
 
-
+    let house;
     switch(houseNumber) {
         case 1:
             house = "Gryffindor";
@@ -23,9 +23,6 @@ function sortStudent() {    // sort student function
         default:
             house = "Unknown";
     }
-
-    var resultMessage = studentName + ", you are " + house + ".";
-        // printing result to the website
 
     document.getElementById("result").innerHTML = name + ", you are " + house + ".";
 }
