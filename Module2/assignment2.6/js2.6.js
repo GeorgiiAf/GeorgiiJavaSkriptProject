@@ -8,11 +8,15 @@ function main() {
     let result;
 
     // Roll the dice until the result is 6
-    do {
-        result = rollDice();
-        rolls.push(result);
-        console.log('Roll:', result);
-    } while (result !== 6);
+    while (true) {
+    result = rollDice();
+    rolls.push(result);
+    console.log('Roll:', result);
+
+    if (result === 6) {
+        break;
+    }
+}
 }
 
 main();
